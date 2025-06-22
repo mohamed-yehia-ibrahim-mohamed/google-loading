@@ -1,0 +1,82 @@
+:root {
+    --blue-color:#008ae6;
+    --red-color:#e60000;
+    --green-color:#008000;
+    --color-yellow:#ffcc00;
+    --color-white:#eef5fe;
+}
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@media (min-width:768px) {
+    .container{
+        width: 750px;
+    }    
+}
+@media (min-width:992px) {
+    .container{
+        width: 970px;
+    }    
+}
+@media (min-width:1200px) {
+    .container{
+        width: 1170px;
+    }    
+}
+
+body {
+   height: 100vh;
+   position: relative; 
+   background-color: var(--color-white);  
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.container .box {
+    padding: 20px;
+    border-radius: 50%;
+    margin-right: 20px;
+    animation: moving 1s linear infinite alternate;
+    box-shadow: 20px 30px 7px #ddd;
+}
+
+.box:first-child { 
+    background-color: var(--blue-color);
+    animation-delay: -0.25s;
+}
+.box:nth-child(2){
+    background-color: var(--red-color);
+    animation-delay: -0.5s;
+}
+.box:nth-child(3){
+    background-color: var(--color-yellow);
+    animation-delay: -0.75s;
+}
+.box:last-child{
+    background-color: var(--green-color);
+    animation-delay: -1s;
+}
+
+@keyframes moving {
+    0% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(5px);
+    }
+}
